@@ -71,10 +71,10 @@ function draw() {
     noteW = 60;
     noteH = 75;
         noStroke();
-        rect(0,0,150,50);
-        textSize(20);
+        rect(0,0,270,90);
+        textSize(17);
         stroke(0);
-        text("score:"+str(score),20,32);
+        text("score:"+str(score)+"\nClick Play button above to start\nPress H to hit the notes",15,30);
         if (keyIsPressed) {
             if (x1 > 160 && x1 < 200) {
                 image(noteFire, x1, y1, noteW, noteH);
