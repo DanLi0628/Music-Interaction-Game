@@ -1,3 +1,5 @@
+score=0;
+
 function preload() {
     wxp = loadImage("background/五线谱.jpeg");
     backgroundImage = loadImage('background/1.png');
@@ -68,27 +70,108 @@ function draw() {
     Note();
     noteW = 60;
     noteH = 75;
-    if (keyIsPressed) {
+        noStroke();
+        rect(0,0,150,50);
+        textSize(20);
+        stroke(0);
+        text("score:"+str(score),20,32);
+        if (keyIsPressed) {
+            if (x1 > 160 && x1 < 200) {
+                image(noteFire, x1, y1, noteW, noteH);
+            }
+            if (x2 > 160 && x2 < 200) {
+                image(noteFire, x2, y2, noteW, noteH);
+            }
+            if (x3 > 160 && x3 < 200) {
+                image(noteFire, x3, y3, noteW, noteH);
+            }
+            if (x4 > 160 && x4 < 200) {
+                image(noteFire, x4, y4, noteW, noteH);
+            }
+            if (x5 > 160 && x5 < 200) {
+                image(noteFire, x5, y5, noteW, noteH);
+            }
+            if (x6 > 160 && x6 < 200) {
+                image(noteFire, x6, y6, noteW, noteH);
+            }
+        }
+    }
+
+  function keyPressed() {
         if (x1 > 160 && x1 < 200) {
             image(noteFire, x1, y1, noteW, noteH);
+            if(x1>=170&&x1<=190){
+                score+=100;
+            }
+            if(x1>160&&x1<170){
+                score+=90;
+            }
+            if(x1>190&&x1<200){
+                score+=80;
+            }
         }
         if (x2 > 160 && x2 < 200) {
             image(noteFire, x2, y2, noteW, noteH);
+            if(x2>=170&&x2<=190){
+                score+=100;
+            }
+            if(x2>160&&x2<170){
+                score+=90;
+            }
+            if(x2>190&&x2<200){
+                score+=80;
+            }
         }
         if (x3 > 160 && x3 < 200) {
             image(noteFire, x3, y3, noteW, noteH);
+            if(x3>=170&&x3<=190){
+                score+=100;
+            }
+            if(x3>160&&x3<170){
+                score+=90;
+            }
+            if(x3>190&&x3<200){
+                score+=80;
+            }
         }
         if (x4 > 160 && x4 < 200) {
             image(noteFire, x4, y4, noteW, noteH);
+            if(x4>=170&&x4<=190){
+                score+=100;
+            }
+            if(x4>160&&x4<170){
+                score+=90;
+            }
+            if(x4>190&&x4<200){
+                score+=80;
+            }
         }
         if (x5 > 160 && x5 < 200) {
             image(noteFire, x5, y5, noteW, noteH);
+            if(x5>=170&&x5<=190){
+                score+=100;
+            }
+            if(x5>160&&x5<170){
+                score+=90;
+            }
+            if(x5>190&&x5<200){
+                score+=80;
+            }
         }
         if (x6 > 160 && x6 < 200) {
             image(noteFire, x6, y6, noteW, noteH);
+            if(x6>=170&&x6<=190){
+                score+=100;
+            }
+            if(x6>160&&x6<170){
+                score+=90;
+            }
+            if(x6>190&&x6<200){
+                score+=80;
+            }
         }
-    }
-}
+        }
+
 
 
 
