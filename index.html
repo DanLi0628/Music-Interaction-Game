@@ -3,18 +3,6 @@
 
 <head>
     <title>Audio</title>
-    <style>
-        button {
-          position: relative;
-          left: 380px;
-          top: 80px;
-        }
-        audio{
-          position: relative;
-          left: 200px;
-          top: 60px;
-        }
-        </style>
     <script src="sketch.js"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,15 +12,17 @@
 </head>
 
 <body>
-     <script>
-          
-        function play(){
+    <input type="button" id='button' value="START" onclick="play()">
+    <script type='text/javascript'>
+        function play() {
+            m=1;
             var audio = document.getElementById("audio");
             audio.play();
-        }
-        </script>
-    <input type="button" value="START" onclick="play()">
-        <audio id="audio" loop>
+        }   
+        
+    </script>
+    
+    <audio id="audio" loop>
         <source src="music/bensound-pianomoment.mp3" type="audio/mp3">
     </audio>
 </body>

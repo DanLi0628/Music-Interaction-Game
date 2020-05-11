@@ -1,7 +1,9 @@
 score=0;
+m=0;
+n=5;
 
 function preload() {
-    wxp = loadImage("background/五线谱.jpeg");
+    lines = loadImage("background/lines.jpeg");
     backgroundImage = loadImage('background/1.png');
     note0 = loadImage('background/note0.png');
     note1 = loadImage('background/note1.png');
@@ -16,17 +18,17 @@ function preload() {
 
 
 function setup() {
-    x1 = 2000;
+    x1 = 1500;
     y1 = 430;
     x2 = x1 + 300;
     y2 = 430;
-    x3 = x2 + 250;
+    x3 = x2 + 200;
     y3 = 430;
-    x4 = x3 + 300;
+    x4 = x3 + 160;
     y4 = 430;
-    x5 = x4 + 150;
+    x5 = x4 + 160;
     y5 = 430;
-    x6 = x5 + 200;
+    x6 = x5 + 160;
     y6 = 430;
     createCanvas(windowWidth, windowHeight);
 }
@@ -40,36 +42,36 @@ function Note() {
     image(note0, x2, y2, 40, 50);
     x2 = x2 - 5;
     if (x2 < 0) {
-        x2 = x1 + random(150, 300);
+        x2 = x1 + a*n;
     }
     image(note2, x3, y3, 40, 50);
     x3 = x3 - 5;
     if (x3 < 0) {
-        x3 = x2 + random(150, 300);
+        x3 = x2 + a*n;
     }
     image(note3, x4, y4, 40, 50);
     x4 = x4 - 5;
     if (x4 < 0) {
-        x4 = x3 + random(150, 300);
+        x4 = x3 + a*n;
     }
     image(note4, x5, y5, 40, 50);
     x5 = x5 - 5;
     if (x5 < 0) {
-        x5 = x4 + random(150, 300);
+        x5 = x4 + a*n;
     }
     image(note5, x6, y6, 40, 50);
     x6 = x6 - 5;
     if (x6 < 0) {
-        x6 = x5 + random(150, 300);
+        x6 = x5 + a*n;
     }
 }
 
 
-function draw() {
+function draw() { 
+    a=random(30,55);
     image(backgroundImage, 0, 0, windowWidth, windowHeight);
-    image(wxp, 0, 430, windowWidth, 50);
+    image(lines, 0, 430, windowWidth, 50);
     image(noteCircle, 160, 425, 70, 70);
-   //Note();
     noteW = 60;
     noteH = 75;
         fill(255);
@@ -79,6 +81,9 @@ function draw() {
         fill(0);
         stroke(0);
         text("score:"+str(score)+"\n\nClick START button above to start\n\nPress any key to hit the notes",15,20);
+        if(m==1){
+        Note();
+        }
         if (keyIsPressed) {
             if (x1 > 160 && x1 < 200) {
                 image(noteFire, x1, y1, noteW, noteH);
@@ -100,9 +105,9 @@ function draw() {
             }
         }
     }
+    
 
   function keyPressed() {
-      if(keyCode===72){
         if (x1 > 160 && x1 < 200) {
             image(noteFire, x1, y1, noteW, noteH);
             if(x1>=170&&x1<=190){
@@ -174,7 +179,6 @@ function draw() {
             if(x6>190&&x6<200){
                 score+=80;
             }
-        }
         }
         }
 
