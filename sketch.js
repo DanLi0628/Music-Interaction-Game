@@ -72,6 +72,9 @@ function draw() {
     image(backgroundImage, 0, 0, windowWidth, windowHeight);
     image(lines, 0, 430, windowWidth, 50);
     image(noteCircle, 160, 425, 70, 70);
+    textSize(17);
+    fill('blue');
+    text('Hit!',182,410);
     noteW = 60;
     noteH = 75;
         fill(255);
