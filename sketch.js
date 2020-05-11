@@ -13,6 +13,8 @@ function preload() {
     noteCircle = loadImage("background/noteCircle.png");
 }
 
+
+
 function setup() {
     x1 = 2000;
     y1 = 430;
@@ -67,14 +69,16 @@ function draw() {
     image(backgroundImage, 0, 0, windowWidth, windowHeight);
     image(wxp, 0, 430, windowWidth, 50);
     image(noteCircle, 160, 425, 70, 70);
-    Note();
+   //Note();
     noteW = 60;
     noteH = 75;
+        fill(255);
         noStroke();
-        rect(0,0,270,90);
-        textSize(17);
+        rect(0,0,230,90);
+        textSize(13);
+        fill(0);
         stroke(0);
-        text("score:"+str(score)+"\nClick Play button above to start\nPress H to hit the notes",15,30);
+        text("score:"+str(score)+"\n\nClick START button above to start\n\nPress any key to hit the notes",15,20);
         if (keyIsPressed) {
             if (x1 > 160 && x1 < 200) {
                 image(noteFire, x1, y1, noteW, noteH);
@@ -98,6 +102,7 @@ function draw() {
     }
 
   function keyPressed() {
+      if(keyCode===72){
         if (x1 > 160 && x1 < 200) {
             image(noteFire, x1, y1, noteW, noteH);
             if(x1>=170&&x1<=190){
@@ -169,6 +174,7 @@ function draw() {
             if(x6>190&&x6<200){
                 score+=80;
             }
+        }
         }
         }
 
